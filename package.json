@@ -1,0 +1,19 @@
+{
+  "author": "BlvckR8t || Henriques Svlucvmbv",
+  "name": "nodejs-fileupload",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node-dev --transpile-only --ignore-watch=node_modules src/server"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-edge": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  }
+}
