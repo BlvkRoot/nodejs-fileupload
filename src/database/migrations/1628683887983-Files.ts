@@ -19,6 +19,10 @@ export class Files1628683887983 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "imageBase64",
+                        type: "varchar(8000)"
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"

@@ -12,7 +12,9 @@ class Files {
     @Column()
     mime: string
 
-    @Column()
+    @Column({
+        length: 8000
+    })
     imageBase64: string
 
     @CreateDateColumn()
