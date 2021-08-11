@@ -4,11 +4,11 @@ import { FilesService } from '../services/FilesService';
 class FilesController {
   show = async (req: Request, res: Response) => {
     try {
+      
       const filesService = new FilesService();
-
       const files = await filesService.show();
 
-      console.log(files);
+      // console.log(files);
       
       return res.render('index', { files }); 
 
