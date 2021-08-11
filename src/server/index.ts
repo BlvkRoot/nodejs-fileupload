@@ -5,7 +5,7 @@ import { routes } from '../routes';
 import expressEdge from 'express-edge';
 import { resolve } from 'path';
 
-const APP = express();
+const APP = express(); 
 
 const PORT = process.env.PORT || 3333;
 

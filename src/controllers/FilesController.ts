@@ -9,13 +9,17 @@ class FilesController {
   upload = async (req: Request, res: Response) => {
     const { filename, mime, imageBase64 } = req.body;
 
-    console.log(filename, mime);
-    
-    let filesService = new FilesService();
+    try {
+      let filesService = new FilesService();
 
-    filesService.create({ filename, mime, imageBase64});
+      const file = await filesService.create({ filename, mime, imageBase64});
     
-    return res.json('File successfully uploaded..');
+      return res.json({message: 'File successfully uploaded..'});
+
+    } catch ({message}) {
+      console.log('Error ao cadastrar: ', message);
+      return res.json({error: message});
+    }
   }
 
 }

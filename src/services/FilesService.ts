@@ -19,9 +19,13 @@ class FilesService {
     create = async ({ filename, mime, imageBase64 } : IFiles) => {
         const file = this.filesRepository.create({ filename, mime, imageBase64});
 
-        await this.filesRepository.save(file);
+        try {
+            await this.filesRepository.save(file);
 
-        return file;
+            return file;
+        } catch ({message}) {
+            throw new Error(message);
+        }
     }
 }
 

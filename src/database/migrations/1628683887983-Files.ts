@@ -7,7 +7,7 @@ export class Files1628683887983 implements MigrationInterface {
             name: 'files',
             columns: [{
                         name: "id",
-                        type: "uuid",
+                        type: "varchar",
                         isPrimary: true
                     },
                     {
