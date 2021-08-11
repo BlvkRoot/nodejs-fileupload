@@ -13,7 +13,7 @@ class Files {
     mime: string
 
     @Column({
-        length: 8000
+        length: 20000
     })
     imageBase64: string
 

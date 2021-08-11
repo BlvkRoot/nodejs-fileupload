@@ -20,7 +20,7 @@ export class Files1628683887983 implements MigrationInterface {
                     },
                     {
                         name: "imageBase64",
-                        type: "varchar(8000)"
+                        type: "varchar(20000)"
                     },
                     {
                         name: "created_at",

@@ -32,6 +32,8 @@
     fileReader.onload = () => {
       imageBase64 = fileReader.result;
       
+      console.log(imageBase64);
+      
       let ajax = new XMLHttpRequest();
       ajax.upload.addEventListener('progress', handleUploadProgress, false);
       ajax.open('POST', '/file/upload');
