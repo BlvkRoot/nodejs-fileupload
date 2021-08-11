@@ -4,7 +4,8 @@ import { FilesRepository } from '../repositories/FilesRepository';
 
 interface IFiles {
     filename: string,
-    mime: string
+    mime: string,
+    imageBase64: string
 }
 
 
@@ -15,8 +16,8 @@ class FilesService {
         this.filesRepository = getCustomRepository(FilesRepository);
     }
 
-    create = async ({ filename, mime } : IFiles) => {
-        const file = this.filesRepository.create({ filename, mime});
+    create = async ({ filename, mime, imageBase64 } : IFiles) => {
+        const file = this.filesRepository.create({ filename, mime, imageBase64});
 
         await this.filesRepository.save(file);
 

@@ -18,7 +18,7 @@ expressEdge.config({ cache: process.env.NODE_ENV === 'production' });
 APP.use(expressEdge.engine);
 APP.set('views', `${__dirname}/../public/views`);
 
-APP.use(express.json());
+APP.use(express.json({ limit: '50mb' })); // default limit is 100kb, alter to allow base64 string
 APP.use(express.urlencoded({extended: false}));
 APP.use(routes);
 

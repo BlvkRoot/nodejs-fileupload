@@ -12,6 +12,9 @@ class Files {
     @Column()
     mime: string
 
+    @Column()
+    imageBase64: string
+
     @CreateDateColumn()
     created_at: Date
 

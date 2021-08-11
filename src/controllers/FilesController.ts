@@ -7,11 +7,13 @@ class FilesController {
   }
 
   upload = async (req: Request, res: Response) => {
-    console.log('Uploading file ', req.body);
+    const { filename, mime, imageBase64 } = req.body;
 
+    console.log(filename, mime);
+    
     let filesService = new FilesService();
 
-    // filesService.create();
+    filesService.create({ filename, mime, imageBase64});
     
     return res.json('File successfully uploaded..');
   }
