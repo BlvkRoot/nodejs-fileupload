@@ -10,6 +10,16 @@
 <body>
   <section>
     <div>
+      @if(files)
+        @each(file in files)
+          <li> {{file.filename}}</li>
+          <img src="{{ file.imageBase64 }}" height="400" width="400" style="object-fit: contain;"/>
+        @endeach
+      @else
+        <div>No files uploaded!</div>
+      @endif
+    </div>
+    <div>
       <form action="/file/upload" method="post" enctype="multipart/form-data" id="form-upload">
         <h1>File Upload</h1>
         <progress id="progress" value="0" min="0" max="100"></progress>

@@ -27,6 +27,17 @@ class FilesService {
             throw new Error(message);
         }
     }
+
+    show = async () => {
+        try {
+            const files = await this.filesRepository.find();
+
+            return files;
+        } catch ({message}) {
+            throw new Error(message);
+        }
+
+    }
 }
 
 export { FilesService }

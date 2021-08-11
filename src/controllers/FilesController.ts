@@ -3,7 +3,18 @@ import { FilesService } from '../services/FilesService';
  
 class FilesController {
   show = async (req: Request, res: Response) => {
-    return res.render('index');
+    try {
+      const filesService = new FilesService();
+
+      const files = await filesService.show();
+
+      console.log(files);
+      
+      return res.render('index', { files }); 
+
+    } catch ({message}) {
+      return res.json({error: message});
+    }
   }
 
   upload = async (req: Request, res: Response) => {
